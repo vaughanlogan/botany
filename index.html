@@ -1,11 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botany</title>
-</head>
-<body>
-    <script src="botany.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Botany</title>
+		<style>
+			body {
+				display: flex;
+				font-family: monospace;
+				gap: 0.5rem;
+				margin: 0;
+				padding: 0.5rem;
+			}
+			.infopanel {
+				border: 1px black solid;
+				border-radius: 0.5rem;
+				padding: 0.5rem;
+			}
+			h3 {
+				margin: 0;
+			}
+			h4 {
+				margin: 0;
+			}
+			.infostat {
+				margin-left: 0.5rem;
+			}
+            .plantsection{
+                display: grid;
+                align-content: start;
+                gap: 0.5rem;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="envpanel infopanel">
+			<h3>Environment</h3>
+		</div>
+		<div class="plantsection infopanel">
+            <h3>Plants</h3>
+			<div class="plantpanel infopanel">
+				<h3>Plant</h3>
+			</div>
+		</div>
+
+		<script src="botany.js"></script>
+	</body>
 </html>
