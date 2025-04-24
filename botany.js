@@ -2,10 +2,9 @@ let plant1 = {
 	alive: true,
 	age: 0,
 	healthy: true,
-	health: 1,
-    _growthrate: 1,
+	health: 10,
 	_maxhealth: 100,
-	_healingrate: 1,
+	_healingrate: 2,
 	input: {
 		substrate: {
 			water: 1,
@@ -42,7 +41,7 @@ let plant2 = {
 	alive: true,
 	age: 0,
 	healthy: true,
-	health: 1,
+	health: 10,
 	_maxhealth: 100,
 	_healingrate: 1,
 	input: {
@@ -82,11 +81,11 @@ let plants = [plant1, plant2];
 let environment = {
 	resources: {
 		substrate: {
-			water: 10,
-			nutrient: 10,
+			water: 500,
+			nutrient: 500,
 		},
 		atmosphere: {
-			co2: 10,
+			co2: 500,
 		},
 	},
 	light: {
@@ -189,7 +188,7 @@ function timeStep(numsteps) {
 						//check if plant will be healthy
 						if (
 							environment.resources[category][key] -
-								plant.input[category][key] <
+								plant.input[category][key]*plant.health <
 							0
 						) {
 							plant.healthy = false;
@@ -203,17 +202,14 @@ function timeStep(numsteps) {
 					for (let category in plant.input) {
 						for (let key in plant.input[category]) {
 							environment.resources[category][key] -=
-								plant.input[category][key];
+								plant.input[category][key]*plant.health;
 						}
 					}
 					//outputs
 					for (let category in plant.output) {
 						for (let key in plant.output[category]) {
-							if (!environment.resources[category][key]) {
-								environment.resources[category][key] = 0;
-							}
 							environment.resources[category][key] +=
-								plant.output[category][key];
+								plant.output[category][key]*plant.health;
 						}
 					}
 				}
@@ -252,5 +248,5 @@ updatePlantPanel();
 window.addEventListener("load", () => {
 	setInterval(() => {
 		timeStep(1);
-	}, 1000);
+	}, 100);
 });
