@@ -1,0 +1,128 @@
+[
+	{
+		"type": "default",
+		"alive": true,
+		"age": 0,
+		"size": 1,
+		"_maxsize": 1,
+		"_growthrate": 1,
+		"healthy": true,
+		"health": 1,
+		"_maxhealth": 1,
+		"_healingrate": 1,
+		"input": {
+			"substrate": {},
+			"atmosphere": {}
+		},
+		"output": {
+			"substrate": {},
+			"atmosphere": {}
+		},
+		"kept": {},
+		"resources": {},
+		"conditions": {
+			"light": {
+				"uv": 0,
+				"violet": 0,
+				"blue": 0,
+				"green": 0,
+				"yellow": 0,
+				"orange": 0,
+				"red": 0,
+				"ir": 0
+			}
+		}
+	},
+	{
+		"type": "algae",
+		"alive": true,
+		"age": 0,
+		"size": 1,
+		"_maxsize": 10,
+		"_growthrate": 1,
+		"healthy": true,
+		"health": 10,
+		"_maxhealth": 10,
+		"_healingrate": 1,
+		"input": {
+			"substrate": {
+				"water": 1,
+				"nutrient": 1
+			},
+			"atmosphere": {
+				"co2": 1
+			}
+		},
+		"output": {
+			"substrate": {
+				"waste": 1
+			},
+			"atmosphere": {
+				"o2": 1,
+				"water": 1
+			}
+		},
+		"kept": {
+			"c": 1
+		},
+		"resources": {},
+		"conditions": {
+			"light": {
+				"uv": 0,
+				"violet": 0.5,
+				"blue": 0.5,
+				"green": 0.1,
+				"yellow": 0.5,
+				"orange": 0.5,
+				"red": 1,
+				"ir": 0
+			}
+		}
+	},
+	{
+		"type": "fungi",
+		"alive": true,
+		"age": 0,
+		"size": 1,
+		"_maxsize": 10,
+		"_growthrate": 1,
+		"healthy": true,
+		"health": 10,
+		"_maxhealth": 10,
+		"_healingrate": 1,
+		"input": {
+			"substrate": {
+				"waste": 1
+			},
+			"atmosphere": {
+				"o2": 1,
+				"water": 1
+			}
+		},
+		"output": {
+			"substrate": {
+				"nutrient": 1,
+				"water": 1
+			},
+			"atmosphere": {
+				"co2": 1
+			}
+		},
+        "kept": {
+        },
+        "resources":{
+        },
+		"conditions": {
+			"light": {
+				"uv": 0,
+				"violet": 0.5,
+				"blue": 0.5,
+				"green": 0.1,
+				"yellow": 0.5,
+				"orange": 0.5,
+				"red": 1,
+				"ir": 0
+			}
+		}
+	}
+]
