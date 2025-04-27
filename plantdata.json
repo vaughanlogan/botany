@@ -108,10 +108,8 @@
 				"co2": 1
 			}
 		},
-        "kept": {
-        },
-        "resources":{
-        },
+		"kept": {},
+		"resources": {},
 		"conditions": {
 			"light": {
 				"uv": 0,
